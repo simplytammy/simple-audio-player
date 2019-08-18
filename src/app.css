@@ -1,0 +1,114 @@
+html {
+  height: 100%;
+  display: table;
+  margin: auto;
+}
+body {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  background: #f1f1f1;
+  font-family: 'Poiret One', cursive;
+}
+
+.audio-player {
+  position: relative;
+    border: 1px solid #dfdfdf;
+  width: 50vw;
+  padding: 3rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 4rem 0 4rem 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.32);
+    background:
+    linear-gradient(126deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(/assets/cover.jpg);
+}
+
+.audio-player .subscribe
+{
+  padding: 6px 17px;
+  background: #fff;
+  color: #555;
+  font-weight: 900;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.32);
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+}
+
+.audio-player .player-controls {
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  flex: 3;
+}
+.audio-player .player-controls p 
+{
+  color: #fff;
+}
+
+.audio-player .player-controls progress {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+}
+.audio-player .player-controls progress:hover
+{
+  cursor: pointer;
+}
+.audio-player .player-controls progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  color: #666666;
+  height: 10px;
+}
+.audio-player .player-controls progress[value]::-webkit-progress-bar {
+  background-color: #666666;
+  border-radius: 5px;
+  border: 1px solid #666666;
+    color: #666666;
+}
+.audio-player .player-controls progress::-webkit-progress-value {
+  background-color: white;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.audio-player .player-controls p {
+  font-size: 1.6rem;
+}
+.audio-player #play-btn {
+  background-image: url('/assets/play-button.svg');
+  background-size: cover;
+  width: 75px;
+  height: 75px;
+  margin: 2rem 0 2rem 2rem;
+  position: absolute;
+}
+.audio-player #play-btn.pause {
+  background-image: url('/assets/pause-round-button.svg');
+    background-size: cover;
+  width: 75px;
+  height: 75px;
+  margin: 2rem 0 2rem 2rem;
+  position: absolute;
+}
+
+@media screen and (max-width: 756px) {
+  .audio-player #play-btn.pause,
+  .audio-player #play-btn
+  {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 35%;
+    top: 12%;
+    transform: translate(-50%,-50%);
+  }
+
+}
