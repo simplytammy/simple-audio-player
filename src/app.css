@@ -87,11 +87,7 @@ body {
   font-size: 1.6rem;
 }
 .audio-player #play-btn {
-<<<<<<< HEAD
   background-image: url('../assets/play-button.svg');
-=======
-  background-image: url('assets/play-button.svg');
->>>>>>> cf84477425b562432a5a0e5462553cdbf0317b13
   background-size: cover;
   width: 75px;
   height: 75px;
@@ -99,11 +95,7 @@ body {
   position: absolute;
 }
 .audio-player #play-btn.pause {
-<<<<<<< HEAD
   background-image: url('../assets/pause-round-button.svg');
-=======
-  background-image: url('assets/pause-round-button.svg');
->>>>>>> cf84477425b562432a5a0e5462553cdbf0317b13
     background-size: cover;
   width: 75px;
   height: 75px;
