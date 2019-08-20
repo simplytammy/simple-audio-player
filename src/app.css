@@ -23,7 +23,11 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.32);
     background:
     linear-gradient(126deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+<<<<<<< HEAD
     url('../assets/cover.jpg');
+=======
+    url(assets/cover.jpg);
+>>>>>>> cf84477425b562432a5a0e5462553cdbf0317b13
 }
 
 .audio-player .subscribe
@@ -83,7 +87,11 @@ body {
   font-size: 1.6rem;
 }
 .audio-player #play-btn {
+<<<<<<< HEAD
   background-image: url('../assets/play-button.svg');
+=======
+  background-image: url('assets/play-button.svg');
+>>>>>>> cf84477425b562432a5a0e5462553cdbf0317b13
   background-size: cover;
   width: 75px;
   height: 75px;
@@ -91,7 +99,11 @@ body {
   position: absolute;
 }
 .audio-player #play-btn.pause {
+<<<<<<< HEAD
   background-image: url('../assets/pause-round-button.svg');
+=======
+  background-image: url('assets/pause-round-button.svg');
+>>>>>>> cf84477425b562432a5a0e5462553cdbf0317b13
     background-size: cover;
   width: 75px;
   height: 75px;
