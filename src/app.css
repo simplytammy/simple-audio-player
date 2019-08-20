@@ -23,11 +23,7 @@ body {
   box-shadow: 0 10px 30px rgba(0,0,0,0.32);
     background:
     linear-gradient(126deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-<<<<<<< HEAD
     url('../assets/cover.jpg');
-=======
-    url(assets/cover.jpg);
->>>>>>> cf84477425b562432a5a0e5462553cdbf0317b13
 }
 
 .audio-player .subscribe
