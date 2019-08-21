@@ -13,8 +13,7 @@ body {
 
 .holder
 {
-  margin: 4rem 0 1rem 0;
-    text-align: center;
+  margin: 1rem 0 1rem 0;
   display: flex;
   align-items: center;
 }
@@ -23,10 +22,11 @@ body {
   position: relative;
   border: 1px solid #dfdfdf;
   width: 50vw;
-  margin: 0 auto;
-  left: 0;
+  margin: 2rem auto;
     box-shadow: 0 10px 30px rgba(0,0,0,0.32);
-    padding: 0 2rem;
+    background: #fff;
+    padding: 3rem 2rem;
+    height: auto;
 }
 .audio-player .cover img
 {
@@ -35,16 +35,25 @@ body {
     object-fit: cover;
 
 }
+.audio-player .title
+{
+  padding: 0;
+  margin-top: 2.5rem;
+  font-weight: 800;
+  font-size: 28px;
+}
 
-
-.audio-player .subscribe
+.audio-player .like
 {
   padding: 6px 17px;
   background: #fff;
+  font-size: 16px;
   color: #555;
+  margin: 1rem 0;
   font-weight: 900;
   box-shadow: 0 10px 30px rgba(0,0,0,0.32);
   text-decoration: none;
+  position: relative;
 }
 
 .audio-player .player-controls {
@@ -52,6 +61,7 @@ body {
   justify-content: center;
   flex: 4;
   position: relative;
+  padding: 0 1rem;
   margin: 0 auto;
 }
 .audio-player .player-controls p 
@@ -61,7 +71,7 @@ body {
 
 .audio-player .player-controls progress {
   width: 100%;
-  margin: 0 15px;
+  margin: 0 auto;
 
 }
 .audio-player .player-controls progress:hover
@@ -73,7 +83,7 @@ body {
   appearance: none;
   background-color: white;
   color: #666666;
-  height: 100px;
+  height: 20px;
 }
 .audio-player .player-controls progress[value]::-webkit-progress-bar {
   background-color: #666666;
@@ -86,19 +96,16 @@ body {
   border: 1px solid #fff;
   border-radius: 5px;
 }
-.audio-player .player-controls p {
-  font-size: 1.6rem;
-}
+
 .audio-player #play-btn {
-  background-image: url('../assets/play-button.svg');
-  background-size: cover;
-  width: 60px;
-  height: 60px;
   margin: 0 0 2rem 0;
+  font-size: 24px;
+  background: #363732;
+  padding: 0.65em 0.75em;
+  border-radius: 50%;
+  color: #fff;
 }
-.audio-player #play-btn.pause {
-  background-image: url('../assets/pause-round-button.svg');
-}
+
 .audio-player #play-btn:hover
 {
   cursor: pointer;
@@ -115,17 +122,18 @@ body {
   display: flex;
   flex-basis: 100%;
   align-items: center;
-  color: #000;
+  color: #363732;
 }
+
 .audio-player .volumeControl .wrapper:hover i.fa {
-  color: #000;
+  color: #363732;
 }
 .audio-player .volumeControl .outer {
-  border-radius: 5px;
+  border-radius: 2px;
   border: 2px inset #363732;
-  background-color: #000;
+  background-color: #fff;
   overflow: hidden;
-  height: 0.5rem;
+  height: 0.3rem;
   flex-basis: 80%;
   margin-left: 0.4rem;
   display: flex;
@@ -133,7 +141,7 @@ body {
   align-items: center;
 }
 .audio-player .volumeControl .outer .inner {
-  background-color: #fff;
+  background-color: #363732;
   width: 100%;
   display: inline-block;
   height: 100%;
@@ -148,13 +156,14 @@ body {
   font-weight: 800;
   font-family: 'Darker Grotesque', sans-serif;
   transition: 1s ease-in-out;
+  line-height: 0;
 }
 
 .start-time
 {
   float: left; 
   position: relative; 
-  left: 1em;
+  left: 0;
 }
 .end-time
 {
@@ -170,6 +179,12 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.action
+{
+    margin: 1rem auto;
+
+}
 .action span
 {
   font-size: 14px;
@@ -180,7 +195,7 @@ body {
 @media screen and (max-width: 758px) {
   .audio-player 
     {
-      width: 100%;
+      width: 50%;
     }
   .audio-player .cover img
 {

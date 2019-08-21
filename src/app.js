@@ -29,7 +29,10 @@ function initProgressBar (){
   progressbar.addEventListener("click", seek);
 
   if (player.currentTime == player.duration) {
-    $('#play-btn').removeClass('pause');
+      $("#play-btn").fadeIn("slow", function() {
+    $(this).removeClass("fa-pause");
+    $(this).addClass("fa-play");
+});
   }
 
   function seek(evt) {
@@ -56,7 +59,8 @@ function initPlayers(num){
           player.pause();
           isPlaying = false;
             $("#play-btn").fadeIn("slow", function() {
-    $(this).removeClass("pause");
+    $(this).removeClass("fa-pause");
+    $(this).addClass("fa-play");
 });
 
 
@@ -64,7 +68,8 @@ function initPlayers(num){
         } else {
           player.play();
           $("#play-btn").fadeIn("slow", function() {
-    $(this).addClass("pause");
+    $(this).removeClass("fa-play");
+        $(this).addClass("fa-pause");
 });
           isPlaying = true;
         }
