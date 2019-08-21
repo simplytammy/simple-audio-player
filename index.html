@@ -5,25 +5,49 @@
 		<meta charset="UTF-8">
 		<title>Audio Player</title>
 		<link rel="stylesheet" type="text/css" href="src/app.css">
-		<link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Darker+Grotesque|Poiret+One&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
 		<div class="audio-player">
-			<a href="#" class="subscribe">subscribe <i class="fa fa-podcast"></i></a>
-			<div id="play-btn"></div>
-			<div class="audio-wrapper" id="player-container" href="javascript:;">
-				<audio id="player" ontimeupdate="initProgressBar()">
-					<source src="assets/sample.mp3" type="audio/mp3">
-				</audio>
+			<div class="holder">
+				<div class="cover">
+					<img src="assets/cover.jpg">
+				</div>
+				<div class="audio-wrapper" id="player-container" href="javascript:;">
+					<audio id="player" ontimeupdate="initProgressBar()">
+						<source src="assets/sample.mp3" type="audio/mp3">
+					</audio>
+				</div>
+				<div class="player-controls scrubber">
+					<span id="seekObjContainer">
+					<progress id="seekObj" value="0" max="1"></progress>
+				</span>
+				<br>
+				<span class="start-time"></span>
+				<span class="end-time"></span>
 			</div>
-			<div class="player-controls scrubber">
-				<p>I see fire<small> by </small> Ed Sheeran</p>
-				<span id="seekObjContainer">
-				<progress id="seekObj" value="0" max="1"></progress>
-			</span>
-			<br>
+			<div>
+			</div>
 		</div>
+		<div class="ctrl">
+			<div id="play-btn"></div>
+			<div class="volumeControl">
+				<div class="wrapper">
+					<i class="fa fa-volume-up"></i>
+					<span class="outer">
+						<span class="inner"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- 		<div class="action">
+				<div>
+						<a href="#" class="subscribe">subscribe <i class="fa fa-podcast"></i></a>
+				</div>
+				<div>
+				</div>
+		</div> -->
 	</div>
 	<script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="src/app.js"></script>
