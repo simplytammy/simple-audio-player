@@ -1,7 +1,7 @@
 let playlist = [
-  {'title':'Majesty by Peruzi', 'audio':"../assets/sample2.mp3",},
-  {'title':'Twisted by Peruzzi and Davido', 'audio':"../assets/sample3.mp3",},
-  {'title':'I see fire by Ed Sheeran', 'audio':"../assets/sample.mp3",}
+  {'title':'Majesty by Peruzi', 'audio':"assets/sample2.mp3",},
+  {'title':'Twisted by Peruzzi and Davido', 'audio':"assets/sample3.mp3",},
+  {'title':'I see fire by Ed Sheeran', 'audio':"assets/sample.mp3",}
 ];
 i=0;
 n = playlist.length;

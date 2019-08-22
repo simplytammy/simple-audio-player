@@ -99,14 +99,13 @@ body {
 }
 .progress_bar
 {
-/*  border:2px solid #363732;
-*/  width: 100%;
+  border:2px solid #363732;
+  width: 100%;
+  min-height: 15px;
+  display: flex;
+  align-items: center;
 }
 .range {
-  -webkit-appearance: none;
-  background: linear-gradient(to right,
-    #ddd 0%, #ddd 50%,
-);
   cursor: pointer;
   height: 10px;
   margin: 0;
