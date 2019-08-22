@@ -1,3 +1,20 @@
+let playlist = [
+  {'title':'Majesty by Peruzi', 'audio':"../assets/sample2.mp3",},
+  {'title':'Twisted by Peruzzi and Davido', 'audio':"../assets/sample3.mp3",},
+  {'title':'I see fire by Ed Sheeran', 'audio':"../assets/sample.mp3",}
+];
+i=0;
+n = playlist.length;
+let player = document.getElementById('player');
+let dur = document.getElementById('dur');
+playlist.forEach( function(i) {
+   console.log(i.audio)
+    player.src = i.audio;
+    $('.title').html(i.title);
+},);
+
+
+
 function calculateTotalValue (length) {
   let minutes = Math.floor(length / 60),
     seconds_int = length - minutes * 60,
@@ -14,33 +31,34 @@ function calculateCurrentValue (currentTime) {
     current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
   return current_time;
 }
-
 function initProgressBar (){
-  let player = document.getElementById('player');
-  let length = player.duration
+  let length = player.duration;
   let current_time = player.currentTime;
   let totalLength = calculateTotalValue(length)
   jQuery(".end-time").html(totalLength);
   let currentTime = calculateCurrentValue(current_time);
   jQuery(".start-time").html(currentTime);
-
-  let progressbar = document.getElementById('seekObj');
-  progressbar.value = (player.currentTime / player.duration);
-  progressbar.addEventListener("click", seek);
+  dur.value=player.currentTime;
 
   if (player.currentTime == player.duration) {
       $("#play-btn").fadeIn("slow", function() {
     $(this).removeClass("fa-pause");
     $(this).addClass("fa-play");
+    dur.value=0;
 });
   }
-
-  function seek(evt) {
-    let percent = evt.offsetX / this.offsetWidth;
-    player.currentTime = percent * player.duration;
-    progressbar.value = percent / 100;
-  }
 };
+
+function mSet() {
+
+  player.currentTime=dur.value;
+}
+
+function mDur(){
+  let length = player.duration;
+  dur.max = length;
+}
+
 
 function initPlayers(num){
   for (let i = 0; i < num; i++) {
@@ -77,7 +95,24 @@ function initPlayers(num){
     }());
   }
 }
- $(".audio-player")
+
+$("#next").data('dir', 1);
+$("#prev").data('dir', -1);
+
+
+    $('#next, #prev').on('click', function() {
+i = (i + $(this).data('dir') + n) % n;
+console.log(i);
+ player.src = playlist[i].audio;
+ $('.title').html(playlist[i].title);
+     $('#play-btn').removeClass("fa-play");
+        $('#play-btn').addClass("fa-pause");
+ player.play();
+});
+    
+         
+
+  $(".audio-player")
     .toArray()
     .forEach(function(player)
       {
@@ -96,5 +131,5 @@ function initPlayers(num){
       });
 
 
-      });
+});
 initPlayers(jQuery('#player-container').length);
