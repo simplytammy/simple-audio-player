@@ -242,7 +242,7 @@ body {
 
   .audio-player 
     {
-      width: 70%;
+      width: 80%;
       padding: 2rem 1rem;
     }
   .audio-player .cover img
@@ -275,5 +275,6 @@ body {
 .action
 {
   display: block;
+  text-align: center;
 }
 }
