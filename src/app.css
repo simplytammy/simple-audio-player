@@ -36,7 +36,6 @@ body {
 
 .audio-player .user_avatar {
   width: 30%;
-  display: none;
   justify-content: space-around;
   margin: 0 auto;
 }
