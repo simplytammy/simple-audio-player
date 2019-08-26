@@ -35,7 +35,7 @@ body {
 }
 
 .audio-player .user_avatar {
-  width: 30%;
+  width: 100%;
   justify-content: space-around;
   margin: 0 auto;
 }
@@ -96,10 +96,11 @@ body {
 }
 
 .progress_bar {
-  border: 2px solid #363732;
+  border: 2px solid #ccc;
   width: 100%;
   min-height: 15px;
   display: flex;
+  padding: 0.45em 0;
   align-items: center;
 }
 
