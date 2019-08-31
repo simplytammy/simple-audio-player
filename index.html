@@ -4,12 +4,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="UTF-8">
 		<title>Audio Player</title>
-		<link rel="stylesheet" type="text/css" href="src/app.css">
 		<link href="https://fonts.googleapis.com/css?family=Darker+Grotesque|Poiret+One&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="src/app.css">
 	</head>
 	<body>
-		<div class="audio-player">
+		<div class="audio-player" id="skin">
 			<div class="user_avatar">
 				<img src="assets/avatar.jpeg">
 			</div>
@@ -31,8 +31,8 @@
 							<input id="dur" type="range" class="range" name="rng" min="0" max="1" step="0.0001" value="0" onchange="mSet()" style="width: 100%">
 						</div>
 						<br>
-						<span class="start-time"></span>
-						<span class="end-time"></span>
+						<span class="time start-time"></span>
+						<span class="time end-time"></span>
 						<br>
 						<div class="ctrl">
 							<div>
@@ -59,8 +59,16 @@
 					<a href="#" class="like shadow">Like <i class="fa fa-heart-o"></i></a>
 					<a href="#" class="like  shadow">Share <i class="fa fa-share-alt"></i></a>
 				</div>
-				<div>
-				</div>
+			</div>
+			<div class="flex">
+				<nav>
+					<a class="dropdown-toggle" href="#" title="Menu"><i class="fa fa-cogs"></i></a>
+					<ul class="dropdown">
+						<li><a href="#" id="darkButton">Dark</a></li>
+						<li><a href="#" id="whiteButton">Default</a></li>
+						<li><a href="#" id="blueButton">Blue</a></li>
+					</ul>
+				</nav>
 			</div>
 		</div>
 		<script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
