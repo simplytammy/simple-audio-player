@@ -22,7 +22,7 @@ a {
 }
 
 .holder {
-  margin: 1rem 0 1rem 0;
+  margin: 0.23rem 0 0.23rem 0;
   display: flex;
   align-items: center;
 }
@@ -33,12 +33,11 @@ a {
 
 /* Important stuff */
 
-nav {
-  position: relative;
-}
-
-.flex {
-  text-align: center;
+.set {
+  position: absolute;
+  right: 1em;
+  top: 0;
+  z-index: 999;
 }
 
 .dropdown-toggle {
@@ -49,8 +48,9 @@ nav {
 
 .dropdown-toggle i {
   padding: 0.5em 0.55em;
-  background: #777;
+  background: #fff;
   border-radius: 50%;
+  color: #555;
 }
 
 #skin.dark {
@@ -99,10 +99,10 @@ ul.dropdown li a {
   position: relative;
   border: 1px solid #dfdfdf;
   width: 50vw;
-  margin: 2rem auto;
+  margin: 1rem auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
   background: #fff;
-  padding: 3rem 2rem;
+  padding: 1rem;
   height: auto;
 }
 
@@ -110,6 +110,56 @@ ul.dropdown li a {
   width: 100%;
   justify-content: space-around;
   margin: 0 auto;
+  position: relative;
+}
+
+.audio-player .user_avatar .live {
+  color: #f00;
+  background: #fff;
+  padding: 5px 10px;
+}
+
+.live i {
+  -moz-animation-duration: 1s;
+  -moz-animation-name: blink;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: blink;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-duration: 1s;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  color: red;
+}
+
+@-moz-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .audio-player .user_avatar img {
@@ -122,7 +172,7 @@ ul.dropdown li a {
   border-radius: 50%;
   border: 2px solid #dfdfdf;
   background: #fff;
-  margin-top: -5em;
+  margin-top: -4em;
 }
 
 #dur:hover {
@@ -176,33 +226,154 @@ ul.dropdown li a {
 }
 
 .range {
-  cursor: pointer;
-  height: 10px;
-  margin: 0;
-  transitionx: 0.1s ease-in;
-  vertical-align: bottom;
+  position: relative;
+}
+
+.range input[type=range] {
+  appearance: none;
+  padding: 0;
   width: 100%;
+  height: 22px;
+  cursor: pointer;
+  display: block;
 }
 
-.range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  background: #aeaeae;
-  border-radius: 6px;
-  box-shadow: inset 0 0 0 19px #eaeaea;
-  height: 0;
-  transitionx: 0.1s ease-in;
-  width: 0;
-}
-
-.range:focus {
+.range input[type=range]:focus {
   outline: none;
+}
+
+.range input[type=range][disabled] {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.range .rangeslider {
+  position: relative;
+  height: 22px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.range .rangeslider:before {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: #e6e6e6;
+  border-radius: 100px;
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.range input::-webkit-slider-runnable-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: #e6e6e6;
+  border-radius: 100px;
+  margin: 11px 0;
+}
+
+.range input::-moz-range-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: #e6e6e6;
+  border-radius: 100px;
+  margin: 11px 0;
+}
+
+.range input::-ms-track {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: #e6e6e6;
+  border-radius: 100px;
+  color: transparent;
+  padding: 11px 0;
+  background: transparent;
+  border-color: transparent;
+}
+
+.range input::-ms-fill-lower,
+.range input::-ms-fill-upper {
+  box-sizing: border-box;
+  width: 100%;
+  height: 4px;
+  background: #e6e6e6;
+  border-radius: 100px;
+}
+
+.range input::-ms-fill-lower {
+  background: #60cd18;
+}
+
+.range .rangeslider-fill-lower {
+  background-color: #60cd18;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  will-change: width;
+}
+
+.range input::-webkit-slider-thumb {
+  box-sizing: border-box;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, .5);
+  border: 6px solid #fff;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px;
+  background: #333940;
+  cursor: pointer;
+  appearance: none;
+  transform: translateY(-50%);
+  margin-top: 2px;
+}
+
+.range input::-moz-range-thumb {
+  box-sizing: border-box;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, .5);
+  border: 6px solid #fff;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px;
+  background: #333940;
+  cursor: pointer;
+}
+
+.range input::-ms-thumb {
+  box-sizing: border-box;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, .5);
+  border: 6px solid #fff;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px;
+  background: #333940;
+  cursor: pointer;
+}
+
+.range .rangeslider-thumb {
+  box-sizing: border-box;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, .5);
+  border: 6px solid #fff;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #333940;
+  cursor: pointer;
+  position: absolute;
+  touch-action: pan-x;
+  top: 50%;
+  transform: translateY(-50%);
+  will-change: left;
 }
 
 .audio-player #play-btn,
 .ctrl_btn {
   margin: 0 1rem 2rem 0;
-  border: 2px solid #363732;
-  border-radius: 50%;
   color: #363732;
 }
 
@@ -290,7 +461,7 @@ ul.dropdown li a {
 
 .action {
   margin: 1rem auto;
-  text-align: center;
+  text-align: left;
 }
 
 .action span {
@@ -300,16 +471,8 @@ ul.dropdown li a {
 
 @media screen and (max-width: 950px) {
   ul.dropdown {
-    display: none;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    margin-top: 0.5em;
-    margin: 0.5em auto;
-    background: #777;
-    min-width: 12em;
-    padding: 0;
-    border-radius: 0 0 0.2em 0.2em;
+    right: 20%;
+    left: unset;
   }
   .holder {
     display: block;
@@ -318,7 +481,7 @@ ul.dropdown li a {
   }
   .audio-player {
     width: 80%;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
   }
   .audio-player .cover img {
     height: 100%;
@@ -358,5 +521,21 @@ ul.dropdown li a {
   .action {
     display: block;
     text-align: center;
+  }
+  .action a {
+    display: block;
+  }
+  .set {
+    position: relative;
+  }
+  .audio-player .user_avatar {
+    margin: 0 0 1em 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .audio-player .user_avatar img {
+    width: 50px;
+    height: 50px;
+    margin-top: -3em;
   }
 }
