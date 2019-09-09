@@ -183,6 +183,9 @@ ul.dropdown li a {
   height: 200px;
   width: 200px;
   object-fit: cover;
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 .audio-player .title {
@@ -383,7 +386,6 @@ ul.dropdown li a {
 }
 
 .audio-player .ctrl_btn {
-  padding: 0.55em 0.75em;
   font-size: 22px;
 }
 
@@ -489,7 +491,6 @@ ul.dropdown li a {
     object-fit: cover;
     display: block;
     margin: 0 auto;
-    border-radius: 10px;
   }
   .audio-player .player-controls {
     position: relative;
