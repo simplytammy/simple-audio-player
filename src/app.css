@@ -28,7 +28,7 @@ a {
 }
 
 .shadow {
-  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 /* Important stuff */
@@ -98,7 +98,7 @@ ul.dropdown li a {
 .audio-player {
   position: relative;
   border: 1px solid #dfdfdf;
-  width: 50vw;
+  max-width:500px;
   margin: 1rem auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
   background: #fff;
@@ -116,8 +116,8 @@ ul.dropdown li a {
 .audio-player .user_avatar .live,
 .audio-player .user_avatar .listeners {
   background: #fff;
-  padding: 8px 10px 0 10px;
-  font-size: 15px;
+  padding: 10px;
+  font-size: 14px;
   font-weight: 700;
   color: #555 !important;
   border-radius: 4px;
@@ -171,8 +171,8 @@ ul.dropdown li a {
 .audio-player .user_avatar img {
   display: block;
   margin: 0 auto;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   padding: 0.65em;
   object-fit: cover;
   border-radius: 50%;
@@ -196,9 +196,9 @@ ul.dropdown li a {
 
 .audio-player .title {
   padding: 0;
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   font-weight: 800;
-  font-size: 28px;
+  font-size: 25px;
 }
 
 .audio-player .like {
@@ -345,7 +345,7 @@ ul.dropdown li a {
 
 .range input::-moz-range-thumb {
   box-sizing: border-box;
-  box-shadow: 0px 4px 25px rgba(0, 0, 0, .5);
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.23);
   border: 6px solid #fff;
   height: 24px;
   width: 24px;
@@ -380,20 +380,24 @@ ul.dropdown li a {
   transform: translateY(-50%);
   will-change: left;
 }
+.align_center {
+  text-align: center;
+  margin-bottom: 8px;
+}
 
 .audio-player #play-btn,
 .ctrl_btn {
-  margin: 0 1rem 2rem 0;
+  margin: 0 1rem 0 0;
   color: #363732;
 }
 
 .audio-player #play-btn {
-  padding: 1rem 1.2rem;
-  font-size: 24px;
+  padding: 0 1.2rem;
+  font-size: 18px;
 }
 
 .audio-player .ctrl_btn {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .audio-player #play-btn:hover {
@@ -424,7 +428,7 @@ ul.dropdown li a {
   box-shadow: -2px 3px 4px rgba(0, 0, 0, 0.23);
   overflow: hidden;
   height: 0.3rem;
-  flex-basis: 80%;
+  flex-basis: 100%;
   margin-left: 0.4rem;
   display: flex;
   justify-content: flex-start;
@@ -464,8 +468,9 @@ ul.dropdown li a {
 }
 
 .ctrl {
-  display: flex;
+  display: block;
   justify-content: space-between;
+  margin-top:10px;
 }
 
 .action {
@@ -506,7 +511,7 @@ ul.dropdown li a {
   }
   .audio-player #play-btn,
   .ctrl_btn {
-    margin: 15px 6px;
+    margin: 0 6px;
   }
   .audio-player .volumeControl,
   .audio-player .volumeControl .wrapper {
